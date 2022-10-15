@@ -20,14 +20,16 @@
                         <div class="form-group mb-3">
                             <label>Post Title * </label>
                             <div>
-                                <input type="text" name="post_title" class="form-control" placeholder="Post Title" value="{{ old('post_title') }}">
+                                <input type="text" name="post_title" class="form-control" placeholder="Post Title"
+                                    value="{{ old('post_title') }}">
                             </div>
 
                         </div>
                         <div class="form-group mb-3">
                             <label>Post Detail * </label>
                             <div>
-                                <textarea name="post_detail" class="form-control snote" cols="30" rows="10">{{ old('post_detail') }}</textarea>
+                                <textarea name="post_detail" class="form-control snote" cols="30"
+                                    rows="10">{{ old('post_detail') }}</textarea>
                             </div>
                         </div>
 
@@ -69,8 +71,17 @@
                         <div class="form-group mb-3">
                             <label>Tags </label>
                             <div>
-                                <input type="text" name="tags" class="form-control" placeholder="Tags" value="{{ old('tags') }}">
+                                <input type="text" name="tags" class="form-control" placeholder="Tags"
+                                    value="{{ old('tags') }}">
                             </div>
+                        </div>
+
+                        <div class=" form-group mb-3">
+                            <label>Want to send this to subscribers?</label>
+                            <select name="subscriber_send_option" class="form-control">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
                         </div>
 
                         <div class="form-group">

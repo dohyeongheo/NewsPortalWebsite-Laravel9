@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Mail\Websitemail;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -75,6 +76,11 @@ class AdminPostController extends Controller
                 $tag->tag_name = $tags_array[$i];
                 $tag->save();
             }
+        }
+
+        // Sendind this post to subscribers
+        if ($request->subscriber_send_option == 1) {
+
         }
 
 

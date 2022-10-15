@@ -13,6 +13,8 @@ use App\Http\Controllers\Front\PostController;
 use App\Http\Controllers\Front\SubCategoryController;
 use App\Http\Controllers\Front\PhotoController;
 use App\Http\Controllers\Front\VideoController;
+use App\Http\Controllers\Front\SubscriberController;
+
 
 
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -48,7 +50,8 @@ Route::get('/news-detail/{id}', [PostController::class, 'detail'])->name('news_d
 Route::get('/category/{id}', [SubCategoryController::class, 'index'])->name('category');
 Route::get('/photo-gallery', [PhotoController::class, 'index'])->name('photo_gallery');
 Route::get('/video-gallery', [VideoController::class, 'index'])->name('video_gallery');
-
+Route::post('/subscriber', [SubscriberController::class, 'index'])->name('subscribe');
+Route::get('/subscriber/verify/{token}/{email}', [SubscriberController::class, 'verify'])->name('subscriber_verify');
 
 
 
