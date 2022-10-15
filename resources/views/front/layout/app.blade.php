@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <meta name="description" content="">
     <title>News Portal Website</title>
 
@@ -41,10 +40,18 @@
                 </div>
                 <div class="col-md-6">
                     <ul class="right">
-                        <li class="menu"><a href="faq.html">FAQ</a></li>
+
+                        @if ($global_page_data->faq_status == 'Show')
+                        <li class="menu"><a href="{{ route('faq') }}">FAQ</a></li>
+                        @endif
+
+                        @if ($global_page_data->about_status == 'Show')
                         <li class="menu"><a href="{{ route('about') }}">About</a></li>
-                        <li class="menu"><a href="contact.html">Contact</a></li>
-                        <li class="menu"><a href="login.html">Login</a></li>
+                        @endif
+                        <li class="menu"><a href="{{ route('contact') }}">Contact</a></li>
+                        @if ($global_page_data->login_status == 'Show')
+                        <li class="menu"><a href="{{ route('login') }}">Login</a></li>
+                        @endif
                         <li>
                             <div class="language-switch">
                                 <select name="">
@@ -65,7 +72,7 @@
             <div class="row">
                 <div class="col-md-4 d-flex align-items-center">
                     <div class="logo">
-                        <a href="route('home')">
+                        <a href="{{ route('home') }}">
                             <img src="uploads/logo.png" alt="">
                         </a>
                     </div>
@@ -110,11 +117,17 @@
                     <div class="item">
                         <h2 class="heading">Useful Links</h2>
                         <ul class="useful-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="terms.html">Terms and Conditions</a></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                            <li><a href="disclaimer.html">Disclaimer</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            @if ($global_page_data->terms_status == 'Show')
+                            <li><a href="{{ route('terms') }}">Terms and Conditions</a></li>
+                            @endif
+                            @if ($global_page_data->privacy_status == 'Show')
+                            <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
+                            @endif
+                            @if ($global_page_data->disclaimer_status == 'Show')
+                            <li><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
+                            @endif
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -188,6 +201,8 @@
     </div>
 
     @include('front.layout.scripts_footer')
+
+    @yield('map_scripts')
 
 
 </body>

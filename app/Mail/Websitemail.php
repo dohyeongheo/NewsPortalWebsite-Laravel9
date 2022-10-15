@@ -31,7 +31,7 @@ class Websitemail extends Mailable
     public function build()
     {
         return $this->view('email.email')->with([
-            'subject' => $this->subject,
+            'subject' => $this->subject
         ]);
     }
 }
