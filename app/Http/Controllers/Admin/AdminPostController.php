@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\SubCategory;
+use App\Models\Subscriber;
 use App\Models\Tag;
 use Auth;
 use DB;
@@ -44,7 +45,7 @@ class AdminPostController extends Controller
         $now = time();
         $ext = $request->file('post_photo')->extension();
         $final_name = 'post_photo_' . $now . '.' . $ext;
-        $request->file('post_photo')->move(public_path('uploads/'), $final_name);
+        $request->file('post_photo')->move(public_path('uploads/post/'), $final_name);
 
         $post = new Post();
         $post->sub_category_id =
@@ -78,9 +79,20 @@ class AdminPostController extends Controller
             }
         }
 
-        // Sendind this post to subscribers
+        // Send this post to subscribers
         if ($request->subscriber_send_option == 1) {
 
+            $subject = 'A new post is published';
+            $message = 'Hi, A new post is published into out website. Please go to see that post : <br>';
+            $message .= '<a target="_blank" href="' . route('news_detail', $ai_id) . '">';
+
+            $message .= $request->post_title;
+            $message .= '</a>';
+
+            $subscribers = Subscriber::where('status', 'Active')->get();
+            foreach ($subscribers as $row) {
+                \Mail::to($row->email)->send(new Websitemail($subject, $message));
+            }
         }
 
 
@@ -113,12 +125,12 @@ class AdminPostController extends Controller
                 'post_photo' => 'required|image|mimes:jpg,jpeg,png,gif'
             ]);
 
-            unlink(public_path('uploads/' . $post_data->post_photo));
+            unlink(public_path('uploads/post/' . $post_data->post_photo));
 
             $now = time();
             $ext = $request->file('post_photo')->extension();
             $final_name = 'post_photo_' . $now . '.' . $ext;
-            $request->file('post_photo')->move(public_path('uploads/'), $final_name);
+            $request->file('post_photo')->move(public_path('uploads/post/'), $final_name);
             $post_data->post_photo = $final_name;
         }
 
@@ -158,13 +170,28 @@ class AdminPostController extends Controller
     public function delete($id)
     {
 
-        $post_data = Post::where('id', $id)->first();
-        $post_data->delete();
-        unlink(public_path('uploads/' . $post_data->post_photo));
+        // $post_data = Post::where('id', $id)->first();
+        // $post_data->delete();
+        // unlink(public_path('uploads/post/' . $post_data->post_photo));
 
-        $tag_data = Tag::where('post_id', $id)->first();
-        $tag_data->delete();
+        // $tag_data = Tag::where('post_id', $id)->first();
+        // $tag_data->delete();
 
-        return redirect()->route('admin_post_show')->with('success', '포스트 정보가 성공적으로 삭제되었습니다.');
+        // return redirect()->route('admin_post_show')->with('success', '포스트 정보가 성공적으로 삭제되었습니다.');
+
+        $test = Post::where('id', $id)->where('admin_id', Auth::guard('admin')->user()->id)->count();
+        if (!$test) {
+            return redirect()->route('admin_home');
+        }
+
+        $post = Post::where('id', $id)->first();
+        unlink(public_path('uploads/post/' . $post->post_photo));
+        $post->delete();
+
+        Tag::where('post_id', $id)->delete();
+
+        return redirect()->route('admin_post_show')->with('success', 'Data is deleted successfully.');
+
+
     }
 }

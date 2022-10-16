@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-6">
                 <div class="featured-photo">
-                    <img src="{{ asset('uploads/'.$post_detail->post_photo) }}" alt="">
+                    <img src="{{ asset('uploads/post/'.$post_detail->post_photo) }}" alt="">
                 </div>
                 <div class="sub">
                     <div class="item">

@@ -71,7 +71,7 @@ class SubscriberController extends Controller
 
         if ($subscriber_data) {
             $subscriber_data->token = '';
-            $subscriber_data->status = 'Confirm';
+            $subscriber_data->status = 'Active';
             $subscriber_data->update();
 
             return redirect()->back()->with('success', 'You are Successfully Verified as a Subscriber to this system');

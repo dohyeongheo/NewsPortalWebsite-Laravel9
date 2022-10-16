@@ -36,7 +36,7 @@
                         <div class="form-group mb-3">
                             <label>Existing Post Photo * </label>
                             <div>
-                                <img src="{{ asset('uploads/'.$post_single->post_photo) }}" alt="" style="width:200px;">
+                                <img src="{{ asset('uploads/post/'.$post_single->post_photo) }}" alt="" style="width:200px;">
                             </div>
                         </div>
 

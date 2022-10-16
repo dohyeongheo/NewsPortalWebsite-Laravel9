@@ -76,7 +76,7 @@
                             </div>
                         </div>
 
-                        <div class=" form-group mb-3">
+                        <div class="form-group mb-3">
                             <label>Want to send this to subscribers?</label>
                             <select name="subscriber_send_option" class="form-control">
                                 <option value="1">Yes</option>

@@ -31,7 +31,7 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="category-page-post-item">
                                 <div class="photo">
-                                    <img src="{{ asset('uploads/'.$row->post_photo) }}" alt="">
+                                    <img src="{{ asset('uploads/post/'.$row->post_photo) }}" alt="">
                                 </div>
                                 <div class="category">
                                     <span class="badge bg-success">{{ $sub_category_data->sub_category_name }}</span>
