@@ -109,7 +109,8 @@
                         </a>
                     </li>
                     <li class="{{ Request::is('admin/subscribers/send-email') ? 'active' : '' }}"><a class="nav-link"
-                            href="{{ route('admin_subscribers_send_email') }}"><i class="fas fa-angle-right"></i> Send Email to All
+                            href="{{ route('admin_subscribers_send_email') }}"><i class="fas fa-angle-right"></i> Send
+                            Email to All
                         </a>
                     </li>
                     <li class="{{ Request::is('') ? 'active' : '' }}"><a class="nav-link"
@@ -119,6 +120,10 @@
 
                 </ul>
             </li>
+
+            <li class="{{ Request::is('admin/live_channel/*') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('admin_live_channel_show') }}"><i class="fas fa-hand-point-right"></i>
+                    <span>Live Channel</span></a></li>
 
 
             {{--

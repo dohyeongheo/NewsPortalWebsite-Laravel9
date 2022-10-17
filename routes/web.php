@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\AdminVideoController;
 use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminSubscriberController;
+use App\http\Controllers\Admin\AdminLiveChannelController;
 
 
 
@@ -153,3 +154,10 @@ Route::get('/admin/faq/delete/{id}', [AdminFaqController::class, 'delete'])->nam
 Route::get('/admin/subscriber/all', [AdminSubscriberController::class, 'show_all'])->name('admin_subscribers')->middleware('admin:admin');
 Route::get('/admin/subscribers/send-email', [AdminSubscriberController::class, 'send_email'])->name('admin_subscribers_send_email')->middleware('admin:admin');
 Route::post('/admin/subscribers/send-email-submit', [AdminSubscriberController::class, 'send_email_submit'])->name('admin_subscribers_send_email_submit');
+
+Route::get('/admin/live_channel/create', [AdminLiveChannelController::class, 'create'])->name('admin_live_channel_create')->middleware('admin:admin');
+Route::post('/admin/live_channel/store', [AdminLiveChannelController::class, 'store'])->name('admin_live_channel_store');
+Route::get('/admin/live_channel/show', [AdminLiveChannelController::class, 'show'])->name('admin_live_channel_show')->middleware('admin:admin');
+Route::get('/admin/live_channel/edit/{id}', [AdminLiveChannelController::class, 'edit'])->name('admin_live_channel_edit')->middleware('admin:admin');
+Route::post('/admin/live_channel/update/{id}', [AdminLiveChannelController::class, 'update'])->name('admin_live_channel_update');
+Route::get('/admin/live_channel/delete/{id}', [AdminLiveChannelController::class, 'delete'])->name('admin_live_channel_delete')->middleware('admin:admin');
