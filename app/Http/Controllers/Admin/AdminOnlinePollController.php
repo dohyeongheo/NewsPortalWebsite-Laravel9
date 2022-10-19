@@ -10,7 +10,7 @@ class AdminOnlinePollController extends Controller
 {
     public function show()
     {
-        $online_poll = OnlinePoll::get();
+        $online_poll = OnlinePoll::orderBy('id', 'desc')->get();
         return view('admin.online_poll_show', compact('online_poll'));
     }
 

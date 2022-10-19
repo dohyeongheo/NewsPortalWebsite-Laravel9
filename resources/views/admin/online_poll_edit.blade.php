@@ -19,18 +19,10 @@
                         <div class="form-group mb-3">
                             <label>Question </label>
                             <div>
-                                <input type="text" name="question" class="form-control" placeholder="Video ID"
-                                    value="{{ $online_poll_single->question }}">
+                                <textarea name="question" class="form-control" cols="30" rows="10"
+                                    style="height:150px;">{{ $online_poll_single->question }}</textarea>
                             </div>
                         </div>
-
-                        {{-- <div class="form-group mb-3">
-                            <label>Heading </label>
-                            <div>
-                                <input type="text" name="heading" class="form-control" id=""
-                                    value="{{ $online_poll_single->heading }}">
-                            </div>
-                        </div> --}}
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>
