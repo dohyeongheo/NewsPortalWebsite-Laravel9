@@ -31,6 +31,8 @@ use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminSubscriberController;
 use App\http\Controllers\Admin\AdminLiveChannelController;
+use App\http\Controllers\Admin\AdminOnlinePollController;
+
 
 
 
@@ -161,3 +163,11 @@ Route::get('/admin/live_channel/show', [AdminLiveChannelController::class, 'show
 Route::get('/admin/live_channel/edit/{id}', [AdminLiveChannelController::class, 'edit'])->name('admin_live_channel_edit')->middleware('admin:admin');
 Route::post('/admin/live_channel/update/{id}', [AdminLiveChannelController::class, 'update'])->name('admin_live_channel_update');
 Route::get('/admin/live_channel/delete/{id}', [AdminLiveChannelController::class, 'delete'])->name('admin_live_channel_delete')->middleware('admin:admin');
+
+Route::get('/admin/online_poll/create', [AdminOnlinePollController::class, 'create'])->name('admin_online_poll_create')->middleware('admin:admin');
+Route::post('/admin/online_poll/store', [AdminOnlinePollController::class, 'store'])->name('admin_online_poll_store');
+Route::get('/admin/online_poll/show', [AdminOnlinePollController::class, 'show'])->name('admin_online_poll_show')->middleware('admin:admin');
+Route::get('/admin/online_poll/edit/{id}', [AdminOnlinePollController::class, 'edit'])->name('admin_online_poll_edit')->middleware('admin:admin');
+Route::post('/admin/online_poll/update/{id}', [AdminOnlinePollController::class, 'update'])->name('admin_online_poll_update');
+Route::get('/admin/online_poll/delete/{id}', [AdminOnlinePollController::class, 'delete'])->name('admin_online_poll_delete')->middleware('admin:admin');
+
