@@ -1,5 +1,6 @@
 ## Udemy Laravel 9 Lesson
 https://www.udemy.com/course/laravel-news-portal-website-for-beginner-to-advanced/
+라라벨 9을 이용한 뉴스포털 제작 강의를 수강하며 라라벨의 다양한 기능을 적용해보았습니다. 
 
 ## Detail Function
 - Laravel Single and Multi Auth (with Guard) System
