@@ -1,8 +1,24 @@
 ## Udemy Laravel 9 Lesson
-https://www.udemy.com/course/laravel-news-portal-website-for-beginner-to-advanced/
-라라벨 9을 이용한 뉴스포털 제작 강의를 수강하며 라라벨의 다양한 기능을 적용해보았습니다. 
+- https://www.udemy.com/course/laravel-news-portal-website-for-beginner-to-advanced/
+- 라라벨 9을 이용한 뉴스포털 제작 강의를 수강하며 라라벨의 다양한 기능을 적용해보았습니다. 
 
 ## Detail Function
+- Guard를 이용한 인증 기능 구현
+- 라라벨 로그인 시스템 구현
+- 라라벨의 CRUD 기능 구현
+- 라라벨의 멀티 랭귀지 기능 구현
+- 비밀번호 찾기, 비밀번호 초기화 구현
+- 이메일 인증 시스템 구현
+- Ajax를 이용한 이메일 발송 기능 구현
+- 웹사이트 테마 설정 구현
+- 웹사이트 로고 등 설정 기능 구현
+- 관리자, 작가 프로필 관리 기능 구현
+- 게시글 섹션의 보안기능 구현
+- 사진 업로드 시스템 구현
+- 토스트 메시지 알림 기능 구현
+- Jquery를 이용한 컨텐츠 검색 기능 구현
+- 웹 서버를 통한 이메일 발송
+
 - Laravel Single and Multi Auth (with Guard) System
 - Laravel CRUD option
 - Complete Multi Language System in Laravel
