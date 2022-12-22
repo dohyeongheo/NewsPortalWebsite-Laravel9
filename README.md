@@ -19,23 +19,6 @@
 - Jquery를 이용한 컨텐츠 검색 기능 구현
 - 웹 서버를 통한 이메일 발송
 
-- Laravel Single and Multi Auth (with Guard) System
-- Laravel CRUD option
-- Complete Multi Language System in Laravel
-- Laravel Login System
-- Forget Password and Reset Password Sytem
-- Email Verification System Logic and Implementation
-- Contact form email sending using Ajax
-- Newsletter email sending using Ajax and email verification
-- Website Color Settings Option
-- Website logo, favicon and other items setup
-- Admin and author profile managements
-- Security for post section in author section
-- Photo uploading system
-- Toast message notification system
-- Home page search option using chained select with jquery
-- Uploading project in web server
-- Email sending in web server
 
 ## Screenshot
 
